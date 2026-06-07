@@ -3,7 +3,7 @@ name = "mcp-l7-1-how-to-build-and-deploy-mcp-server"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10,<3.11"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "fastmcp>=3.4.2",
 ]
