@@ -1,0 +1,169 @@
+{
+  "expense_categories": [
+    {
+      "category": "Food",
+      "subcategories": [
+        "Groceries",
+        "Restaurants",
+        "Fast Food",
+        "Snacks",
+        "Beverages",
+        "Food Delivery"
+      ]
+    },
+    {
+      "category": "Transportation",
+      "subcategories": [
+        "Fuel",
+        "Public Transport",
+        "Taxi",
+        "Ride Sharing",
+        "Parking",
+        "Vehicle Maintenance"
+      ]
+    },
+    {
+      "category": "Housing",
+      "subcategories": [
+        "Rent",
+        "Mortgage",
+        "Property Tax",
+        "Maintenance",
+        "Home Repairs",
+        "Furniture"
+      ]
+    },
+    {
+      "category": "Utilities",
+      "subcategories": [
+        "Electricity",
+        "Water",
+        "Gas",
+        "Internet",
+        "Mobile Recharge",
+        "Cable TV"
+      ]
+    },
+    {
+      "category": "Healthcare",
+      "subcategories": [
+        "Doctor Visits",
+        "Medicines",
+        "Health Insurance",
+        "Dental Care",
+        "Lab Tests",
+        "Emergency Care"
+      ]
+    },
+    {
+      "category": "Education",
+      "subcategories": [
+        "Tuition Fees",
+        "Books",
+        "Online Courses",
+        "Certification Exams",
+        "Study Materials",
+        "Workshops"
+      ]
+    },
+    {
+      "category": "Entertainment",
+      "subcategories": [
+        "Movies",
+        "Gaming",
+        "Streaming Services",
+        "Concerts",
+        "Hobbies",
+        "Events"
+      ]
+    },
+    {
+      "category": "Shopping",
+      "subcategories": [
+        "Clothing",
+        "Footwear",
+        "Accessories",
+        "Electronics",
+        "Home Decor",
+        "Personal Items"
+      ]
+    },
+    {
+      "category": "Travel",
+      "subcategories": [
+        "Flights",
+        "Hotels",
+        "Local Transport",
+        "Sightseeing",
+        "Travel Insurance",
+        "Food During Travel"
+      ]
+    },
+    {
+      "category": "Personal Care",
+      "subcategories": [
+        "Haircut",
+        "Skincare",
+        "Cosmetics",
+        "Spa",
+        "Gym",
+        "Personal Hygiene"
+      ]
+    },
+    {
+      "category": "Insurance",
+      "subcategories": [
+        "Health Insurance",
+        "Vehicle Insurance",
+        "Life Insurance",
+        "Home Insurance",
+        "Travel Insurance",
+        "Accident Insurance"
+      ]
+    },
+    {
+      "category": "Bills & Payments",
+      "subcategories": [
+        "Credit Card Bill",
+        "Loan EMI",
+        "Subscription Renewal",
+        "Membership Fees",
+        "Late Fees",
+        "Service Charges"
+      ]
+    },
+    {
+      "category": "Family",
+      "subcategories": [
+        "Childcare",
+        "School Expenses",
+        "Family Outing",
+        "Gifts",
+        "Elder Care",
+        "Family Support"
+      ]
+    },
+    {
+      "category": "Investments",
+      "subcategories": [
+        "Stocks",
+        "Mutual Funds",
+        "Fixed Deposits",
+        "Bonds",
+        "Retirement Fund",
+        "Cryptocurrency"
+      ]
+    },
+    {
+      "category": "Miscellaneous",
+      "subcategories": [
+        "Donations",
+        "Pet Care",
+        "Legal Fees",
+        "Bank Charges",
+        "Unexpected Expenses",
+        "Other"
+      ]
+    }
+  ]
+}
