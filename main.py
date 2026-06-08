@@ -287,7 +287,7 @@ async def init_db(): # changed: add async
 
 
 # Initialize database at module level
-asyncio.run(init_db())
+# asyncio.run(init_db())
 
 
 # Add Expense
@@ -471,5 +471,6 @@ async def categories():
 
 # start the server
 if __name__ == "__main__":
+    asyncio.run(init_db())
     # mcp.run() # only means we are seting transport "stdio"
     mcp.run(transport='http', host='0.0.0.0', port= 8000) # for remote server we get to see changes here
