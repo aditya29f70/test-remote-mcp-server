@@ -250,6 +250,7 @@ import os
 import aiosqlite  # changed: sqlite to aiosqlite
 import tempfile
 import asyncio
+from typing import Union
 
 # Use temporary directory which should be writable
 
@@ -294,7 +295,7 @@ async def init_db(): # changed: add async
 @mcp.tool
 async def add_expense(
     date: str,
-    amount: float,
+    amount: Union[int,float,str],
     category: str,
     subcategory: str = "",
     note: str = ""
