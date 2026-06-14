@@ -271,7 +271,7 @@ async def init_db(): # changed: add async
             CREATE TABLE IF NOT EXISTS expenses(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 date TEXT NOT NULL,
-                amount REAL NOT NULL,
+                amount TEXT NOT NULL,
                 category TEXT NOT NULL,
                 subcategory TEXT DEFAULT '',
                 note TEXT DEFAULT ''
