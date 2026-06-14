@@ -266,22 +266,18 @@ mcp= FastMCP('ExpenseTracker')
 async def init_db(): # changed: add async
     try:
         # Changed: sqlite3.connect -> aiosqlite.connect
-        async with aiosqlite.connect(DB_PATH) as c:
-            await c.execute("PRAGMA journal_model=WAL") 
-            await c.execute(
-            """
-        CREATE TABLE IF NOT EXISTS expenses(
-            id  INTEGER PRIMARY KEY AUTOINCREMENT,
-            date TEXT NOT NULL,
-            amount REAL NOT NULL,
-            category TEXT NOT NULL,
-            subcategory TEXT DEFAULT '',
-            note TEXT DEFAULT ''
-        )
-
-            """
+        async with aiosqlite.connect(DB_PATH) as db:
+            await db.execute("""
+            CREATE TABLE IF NOT EXISTS expenses(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                date TEXT NOT NULL,
+                amount REAL NOT NULL,
+                category TEXT NOT NULL,
+                subcategory TEXT DEFAULT '',
+                note TEXT DEFAULT ''
             )
-            await c.commit()
+            """)
+            await db.commit()
     except Exception as e:
         print(f"Database initialization error: {e}")
         raise
@@ -300,8 +296,9 @@ async def add_expense(
     subcategory: str = "",
     note: str = ""
 ):
-    """Add a new expense."""
+    await init_db()
 
+    """Add a new expense."""
     async with aiosqlite.connect(DB_PATH) as db:
         cur = await db.execute(
             """
@@ -325,6 +322,7 @@ async def add_expense(
 @mcp.tool
 async def list_expenses(start_date: str, end_date: str):
     """List expenses between dates."""
+    await init_db()
 
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
@@ -350,6 +348,8 @@ async def summarize(start_date: str,
                     end_date: str,
                     category: str | None = None):
     """Summarize expenses by category."""
+
+    await init_db()
 
     query = """
         SELECT category,
@@ -381,6 +381,8 @@ async def summarize(start_date: str,
 @mcp.tool
 async def delete_expense(id: int):
     """Delete expense by id."""
+
+    await init_db()
 
     async with aiosqlite.connect(DB_PATH) as db:
         cur = await db.execute(
@@ -414,6 +416,8 @@ async def edit_expense(
     note: str | None = None,
 ):
     """Edit an expense."""
+
+    await init_db()
 
     updates = []
     params = []
@@ -472,6 +476,6 @@ async def categories():
 
 # start the server
 if __name__ == "__main__":
-    asyncio.run(init_db())
+    # asyncio.run(init_db())
     # mcp.run() # only means we are seting transport "stdio"
     mcp.run(transport='http', host='0.0.0.0', port= 8000) # for remote server we get to see changes here
